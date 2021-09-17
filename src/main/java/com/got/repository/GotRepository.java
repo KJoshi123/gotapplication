@@ -15,7 +15,7 @@ import com.got.projection.ReadCsvProjection;
 
 public interface GotRepository extends JpaRepository<GotDataEntity, Integer>{
 
-	@Query(value = "SELECT location,region FROM `gotdata`", nativeQuery = true)
+	@Query(value = "SELECT (SELECT `location` FROM `locationdata` WHERE `id` = got.location) AS location,(SELECT region FROM regiondata WHERE id = got.region) AS region FROM `got`", nativeQuery = true)
 	List<LocationProjection> getLocationInformation()throws Exception;
 	
 	@Query(value = "CALL `getBattleDetails`(:battleNumber)", nativeQuery = true)
