@@ -38,6 +38,11 @@ public class BattleController {
 	@Autowired
 	BattleService service;
 	
+	/**
+	 * @param accept
+	 * @return CountResponse
+	 * API to get count of the records in database.
+	 */
 	@GetMapping(value = "/count")
 	public ResponseEntity<CountResponse> getCount(
 			@RequestHeader(value = Constants.ACCEPT, required = true) String accept
@@ -67,6 +72,13 @@ public class BattleController {
 		}
 	}
 	
+	/**
+	 * @param accept
+	 * @param contentType
+	 * @param battleNumber
+	 * @return BattleInformationResponse
+	 * API to get all the information of perticular battle using battlenumber
+	 */
 	@GetMapping(value = "/getBattleInformation")
 	public ResponseEntity<BattleInformationResponse> getBattleInformation(
 			@RequestHeader(value = Constants.ACCEPT, required = true) String accept,
@@ -101,6 +113,11 @@ public class BattleController {
 		}
 	}
 	
+	/**
+	 * @param accept
+	 * @return LocationResponse
+	 * API to get the list of all the region and location combinations
+	 */
 	@GetMapping(value = "/list")
 	public ResponseEntity<LocationResponse> getLocationInformation(
 			@RequestHeader(value = Constants.ACCEPT, required = true) String accept

@@ -1,5 +1,9 @@
 package com.got.configuration;
 
+/**
+ * @author Hi kaustubh ! !
+ * All the constants strings used in the application are stored here to reuse
+ */
 public class Constants {
 
 	public static final String ACCEPT = "accept";

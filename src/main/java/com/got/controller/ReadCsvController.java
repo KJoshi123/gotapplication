@@ -33,6 +33,11 @@ public class ReadCsvController {
 	@Autowired
 	ApplicationConfiguration appConfiguration;
 	
+	/**
+	 * @param file
+	 * @return
+	 * API used to read csv file and store and update csv data in database in respective table
+	 */
 	@PostMapping(value = "uploadCsv")
 	public ResponseEntity<CommonResponse> uploadCsv(
 			@RequestParam(value = "file", required = true) MultipartFile file
